@@ -1,0 +1,47 @@
+<MyLayout>
+    filechooser: filechooser
+    folder: folder
+    extension: extension
+
+    id: my_widget
+    BoxLayout:
+
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 50
+        spacing: 20
+
+        TextInput:
+            id: extension
+            text: "Enter extension"
+            size_hint: 0.8, 0.1
+            pos_hint: {"center_x":.5, "center_y":.35}
+        TextInput:
+            id: folder
+            text: "Enter new folder name"
+            size_hint: 0.8, 0.1
+            pos_hint: {"center_x":.5, "center_y":.35}
+
+        Button:
+            text: "SORT"
+            background_normal: ''
+            background_color: (1, 1, 1, 1)
+            color: 0, 0, 0, 1
+            font_size: 16
+            size_hint: 0.8, 0.1
+            pos_hint: {"center_x":.5, "center_y":.35}
+            on_press: root.pressed()
+
+        FileChooserIconView
+            id: filechooser
+            size_hint: 1, 0.8
+            pos_hint: {"center_x":.5, "center_y":.35}
+
+<P>
+    error_label: error_label
+    Label:
+        id: error_label
+        size_hint: None, None
+        pos_hint: {"center_x":.5, "center_y":.5}
+        text: ""
